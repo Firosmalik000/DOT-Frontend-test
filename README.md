@@ -1,30 +1,31 @@
-# React + TypeScript + Vite
+Halo, Perkenalkan Saya Firos Malik Abdillah
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Saya dengan bangga mempersembahkan hasil dari test online saya yang berhasil diselesaikan dalam waktu 1 hari. Di bawah ini adalah panduan instalasi dan penggunaan aplikasi ini.
 
-Currently, two official plugins are available:
+Panduan Instalasi dan Penggunaan
+1. Instalasi
+Untuk menginstal semua dependensi yang dibutuhkan, jalankan perintah berikut di terminal Anda:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+npm install
 
-## Expanding the ESLint configuration
+2. Data User untuk Login
+Anda dapat menggunakan informasi login di bawah ini untuk masuk ke aplikasi:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Username: johnd
+Password: m38rmF$
+Untuk mencoba login dengan pengguna lain, Anda dapat mengambil daftar pengguna dari API berikut: [FakeStoreAPI Users](https://fakestoreapi.com/users)
 
-- Configure the top-level `parserOptions` property like this:
+3. Menjalankan Aplikasi
+Setelah instalasi selesai, Anda dapat menjalankan aplikasi dengan perintah berikut:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+npm run dev
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Dengan perintah ini, aplikasi akan berjalan dalam mode pengembangan, dan Anda dapat mengaksesnya melalui browser Anda.
+
+Jika Anda memiliki pertanyaan atau membutuhkan bantuan lebih lanjut, jangan ragu untuk menghubungi saya. Terima kasih telah menggunakan aplikasi ini, dan semoga bermanfaat!
+
+Salam hormat,
+
+Firos Malik Abdillah
+
+
