@@ -1,28 +1,26 @@
 import { Link } from 'react-router-dom';
 import Button from '../element/Button';
-// memasukkan cart kedalam store melalusi dispatch
 
 const CardProduct = (props: any) => {
   const { children } = props;
-  return <div className="w-full max-w-xs bg-gray-800 border border-gray-700 rounded-lg shadow mx-3 flex flex-col justify-between my-2">{children}</div>;
+  return <div className=" max-w-[250px] max-h-[3500px] bg-gray-800 border border-gray-700 rounded-lg shadow mx-3 flex flex-col justify-between my-2">{children}</div>;
 };
 
 const Header = (props: any) => {
-  // const { image, id } = props;
+  const { image, id } = props;
   return (
-    // <Link to={`/product/${id}`}>
-    //   <img src={image} alt="products" className="p-8 rounded-t-lg h-60 w-full object-cover" />
-    // </Link>
-    <></>
+    <Link to={`/product/${id}`}>
+      <img src={image} alt="products" className="p-8 rounded-t-lg h-60 w-full object-cover" />
+      //{' '}
+    </Link>
   );
 };
 const Body = (props: any) => {
-  const { children, name } = props;
+  const { name } = props;
   return (
     <div className="px-5 pb-5 h-full">
       <a href="">
-        <h5 className="text-xl font-semibold tracking-light text-white">{name.substring(0, 20)} ...</h5>
-        <p className="text-m text-white">{children.substring(0, 100)}</p>
+        <h5 className="text-l font-semibold tracking-light text-white">{name.substring(0, 20)} ...</h5>
       </a>
     </div>
   );
@@ -32,7 +30,7 @@ const Footer = (props: any) => {
 
   return (
     <div className="flex items-center justify-between px-5 pb-5">
-      <span className="text-xl font-bold text-white">${price.toLocaleString('id-ID', { styles: 'currency', currency: 'USD' })}</span>
+      <span className="text-l font-bold text-white">${price.toLocaleString('id-ID', { styles: 'currency', currency: 'USD' })}</span>
       <Button classname="bg-blue-600">Add to Cart</Button>
     </div>
   );

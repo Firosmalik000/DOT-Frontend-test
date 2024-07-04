@@ -1,19 +1,39 @@
-import CardProduct from './components/fragment/CardProduct';
-import CartDrawer from './components/layout/CartDrawer';
-import Hero from './components/layout/Hero';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NavbarMe from './components/layout/NavbarMe';
+import Home from './pages/Home';
 
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+  },
+  // {
+  //   path: '/Login',
+  //   element: <LoginPage />,
+  // },
+  // {
+  //   path: '/Register',
+  //   element: <RegisterPage />,
+  // },
+  // {
+  //   path: '/Products',
+  //   element: <ProductsPage />,
+  // },
+  // {
+  //   path: '/Profile',
+  //   element: <ProfilePage />,
+  // },
+  // {
+  //   path: '/Product/:id',
+  //   element: <DetailProductPage />,
+  // },
+]);
 function App() {
   return (
     <div>
       <NavbarMe />
-      <Hero />
-      <CardProduct>
-        <CardProduct.Header />
-        <CardProduct.Body name={'arararar'}>'ararararar</CardProduct.Body>
-        <CardProduct.Footer price={500} />
-      </CardProduct>
-      <CartDrawer />
+
+      <RouterProvider router={router} />
     </div>
   );
 }
