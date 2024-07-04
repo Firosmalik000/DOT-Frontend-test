@@ -19,13 +19,20 @@ export const getProducts = (callback: (products: Product[]) => void) => {
 
 interface ProductDetail {
   id: number;
-  name: string;
+  title: string;
   price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
 }
 
-export const getDetailProduct = (_id: string, callback: (product: ProductDetail) => void) => {
+export const getDetailProduct = (id: string, callback: (product: ProductDetail) => void) => {
   axios
-    .get(`http://localhost:5000/api/product/${_id}`)
+    .get(`https://fakestoreapi.com/products/${id}`, { timeout: 5000 })
     .then((res: AxiosResponse<ProductDetail>) => {
       console.log('Response dari server:', res.data);
       callback(res.data);

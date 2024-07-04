@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NavbarMe from './components/layout/NavbarMe';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
+import { DetailProductPage } from './pages/DetailProduct';
 
 const router = createBrowserRouter([
   {
@@ -24,10 +25,10 @@ const router = createBrowserRouter([
   //   path: '/Profile',
   //   element: <ProfilePage />,
   // },
-  // {
-  //   path: '/Product/:id',
-  //   element: <DetailProductPage />,
-  // },
+  {
+    path: '/Product/:id',
+    element: <DetailProductPage />,
+  },
 ]);
 function App() {
   return (
