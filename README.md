@@ -1,8 +1,9 @@
 Halo, Perkenalkan Saya Firos Malik Abdillah
 
-Saya dengan bangga mempersembahkan hasil dari test online saya yang berhasil diselesaikan dalam waktu 1 hari. Di bawah ini adalah panduan instalasi dan penggunaan aplikasi ini.
+Saya dengan bangga mempersembahkan hasil dari test online dati PT. Digdaya Olah Teknologi (DOT) Indonesia, yang berhasil diselesaikan dalam waktu 1 hari. Di bawah ini adalah panduan instalasi dan penggunaan aplikasi ini.
 
 Panduan Instalasi dan Penggunaan
+
 1. Instalasi
 Untuk menginstal semua dependensi yang dibutuhkan, jalankan perintah berikut di terminal Anda:
 
