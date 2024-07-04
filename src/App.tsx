@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import { DetailProductPage } from './pages/DetailProduct';
 import Footer from './components/layout/Footer';
+import SidebarProvider from './context/SidebarContext'; // Pastikan jalur ini benar
+import ErrorPage from './pages/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -14,32 +16,25 @@ const router = createBrowserRouter([
     path: '/Login',
     element: <LoginPage />,
   },
-  // {
-  //   path: '/Register',
-  //   element: <RegisterPage />,
-  // },
-  // {
-  //   path: '/Products',
-  //   element: <ProductsPage />,
-  // },
-  // {
-  //   path: '/Profile',
-  //   element: <ProfilePage />,
-  // },
   {
     path: '/Product/:id',
     element: <DetailProductPage />,
   },
+  {
+    path: '*', // Penanganan 404
+    element: <ErrorPage />,
+  },
 ]);
+
 function App() {
   return (
-    <div>
-      <NavbarMe />
-
-      <RouterProvider router={router} />
-
-      <Footer />
-    </div>
+    <SidebarProvider>
+      <div>
+        <NavbarMe />
+        <RouterProvider router={router} />
+        <Footer />
+      </div>
+    </SidebarProvider>
   );
 }
 
