@@ -10,7 +10,7 @@ const NavbarMe = () => {
   };
 
   return (
-    <div className="flex bg-blue-600 h-20 items-center text-white justify-between ">
+    <div className="fixed w-full flex bg-blue-600 h-20 items-center text-white justify-between ">
       <div className=" font-bold   px-5">STORE</div>
       <div className=" flex   px-5">
         <Button classname="ml-2 bg-red-600 font-semibold " onClick={handleLogout}>
