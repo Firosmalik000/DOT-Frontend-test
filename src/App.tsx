@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: '/login',
+    path: '/Login',
     element: <LoginPage />,
   },
   {
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     element: <DetailProductPage />,
   },
   {
-    path: '*', // Penanganan 404
+    path: '*',
     element: <ErrorPage />,
   },
 ]);
