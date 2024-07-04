@@ -25,23 +25,27 @@ const NavbarMe = () => {
   }, []);
   const handleLogout = () => {
     localStorage.removeItem('token');
-
+    localStorage.removeItem('user');
     window.location.href = '/Login';
   };
+  const username = localStorage.getItem('user');
 
   return (
     <div className={`fixed w-full flex  h-20 items-center text-white ${active ? 'bg-white text-black  shadow-lg' : 'bg-blue-600'} justify-between transition duration-300    fixed z-[9999]  px-10`}>
       <a href={`/`} className="font-bold ">
         STORE
       </a>
-      <div>{amount}</div>
-      <div className=" flex   ">
-        <div className="flex items-center px-5">
-          <IoBagHandleSharp onClick={() => setIsOpen(!isOpen)} />
+      <div className="font-bold">{username?.toUpperCase()} </div>
+      <div className=" flex ">
+        <div className="flex hover:scale-105 items-center px-5 relative">
+          <div className="absolute bottom-0 right-2 bg-red-500 rounded-full text-white px-[8px] py-[1px] ">
+            <div className="text-center">{amount}</div>
+          </div>
+          <IoBagHandleSharp className="text-3xl hover:cursor-pointer " onClick={() => setIsOpen(!isOpen)} />
         </div>
 
-        <Button classname="ml-2 bg-red-600 font-semibold " onClick={handleLogout}>
-          <IoIosLogOut />
+        <Button classname="ml-2 bg-red-600 font-semibold  " onClick={handleLogout}>
+          <IoIosLogOut className="3xl" />
         </Button>
       </div>
     </div>

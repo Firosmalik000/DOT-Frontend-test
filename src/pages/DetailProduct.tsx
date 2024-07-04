@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getDetailProduct } from '../services/product.service';
+import { useLogin } from '../hooks/useLogin';
 
 interface Product {
   id?: number;
@@ -18,7 +19,7 @@ interface Product {
 export const DetailProductPage = () => {
   const [product, setProduct] = useState<Product>({});
   const { id } = useParams<{ id: string }>();
-
+  useLogin();
   useEffect(() => {
     if (id) {
       getDetailProduct(id, (data) => {

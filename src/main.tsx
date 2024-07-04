@@ -5,6 +5,7 @@ import './index.css';
 import SidebarProvider from './context/SidebarContext.tsx';
 import { Provider } from 'react-redux';
 import store from './store/Store.tsx';
+import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

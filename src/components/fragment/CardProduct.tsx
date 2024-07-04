@@ -30,6 +30,7 @@ const Body = (props: any) => {
 const Footer = (props: any) => {
   const { price, item, id } = props;
   const dispatch = useDispatch();
+
   if (!item) {
     return <div>No data available</div>;
   }
