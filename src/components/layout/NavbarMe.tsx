@@ -3,12 +3,17 @@ import Button from '../element/Button';
 import { IoBagHandleSharp } from 'react-icons/io5';
 import { useContext, useEffect, useState } from 'react';
 import { SidebarContext } from '../../context/SidebarContext';
-import { Link } from 'react-router-dom';
+
+import { useSelector } from 'react-redux';
 
 const NavbarMe = () => {
   const [active, setActive] = useState(false);
   const { setIsOpen, isOpen }: any = useContext(SidebarContext);
+  const cartItems = useSelector((state: any) => state.cart.items);
 
+  const amount = cartItems.reduce((acc: number, item: any) => {
+    return acc + item.qty;
+  }, 0);
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 100) {
@@ -29,7 +34,7 @@ const NavbarMe = () => {
       <a href={`/`} className="font-bold ">
         STORE
       </a>
-      <div>name</div>
+      <div>{amount}</div>
       <div className=" flex   ">
         <div className="flex items-center px-5">
           <IoBagHandleSharp onClick={() => setIsOpen(!isOpen)} />

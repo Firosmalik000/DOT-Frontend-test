@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 import SidebarProvider from './context/SidebarContext.tsx';
+import { Provider } from 'react-redux';
+import store from './store/Store.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <SidebarProvider>
-      <App />
-    </SidebarProvider>
+    <Provider store={store}>
+      <SidebarProvider>
+        <App />
+      </SidebarProvider>
+    </Provider>
   </React.StrictMode>
 );

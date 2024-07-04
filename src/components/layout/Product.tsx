@@ -28,7 +28,7 @@ const Product = () => {
               <CardProduct>
                 <CardProduct.Header image={product.image} id={product.id} />
                 <CardProduct.Body name={product.title}></CardProduct.Body>
-                <CardProduct.Footer price={product.price} id={product.id} />
+                <CardProduct.Footer price={product.price} id={product.id} item={product} />
               </CardProduct>
             </div>
           ))}

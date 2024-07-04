@@ -47,10 +47,10 @@ export const DetailProductPage = () => {
             </div>
             <div className="flex space-x-4 mb-6 text-sm font-medium">
               <div className="flex-auto flex space-x-4">
-                <button className="h-10 px-6 font-semibold rounded-md bg-black text-white" type="submit">
+                <button className="h-10 px-6 font-semibold rounded-md bg-black text-white hover:bg-blue-600 transition duration-300" type="submit">
                   Buy now
                 </button>
-                <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button">
+                <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900 hover:bg-blue-600 transition duration-300 hover:text-white" type="button">
                   Add to Cart
                 </button>
               </div>
