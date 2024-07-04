@@ -5,7 +5,7 @@ import { addToCart } from '../../slice/CartSlice';
 
 const CardProduct = (props: any) => {
   const { children } = props;
-  return <div className=" max-w-[250px] max-h-[3500px] bg-gray-800 border border-gray-700 rounded-lg shadow mx-3 flex flex-col justify-between my-2">{children}</div>;
+  return <div className=" max-w-[250px] max-h-[3500px] bg-gray-800 border border-gray-700 rounded-lg shadow mx-3 flex flex-col justify-between my-2 hover:scale-105 transition duration-300">{children}</div>;
 };
 
 const Header = (props: any) => {

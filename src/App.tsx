@@ -3,6 +3,7 @@ import NavbarMe from './components/layout/NavbarMe';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import { DetailProductPage } from './pages/DetailProduct';
+import Footer from './components/layout/Footer';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,8 @@ function App() {
       <NavbarMe />
 
       <RouterProvider router={router} />
+
+      <Footer />
     </div>
   );
 }
