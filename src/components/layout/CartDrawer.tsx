@@ -25,7 +25,7 @@ const CartDrawer = () => {
 
   useEffect(() => {
     if (cartItems.length > 0) {
-      const sum = cartItems.reduce((acc, item) => {
+      const sum = cartItems.reduce((acc: number, item: any) => {
         return acc + item.price * item.qty;
       }, 0);
       dispatch({

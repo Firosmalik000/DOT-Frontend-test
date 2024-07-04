@@ -1,15 +1,7 @@
 import { useEffect, useState } from 'react';
 import CardProduct from '../fragment/CardProduct';
-import { getProducts } from '../../services/product.service';
+import { getProducts, ProductProps } from '../../services/product.service';
 import CategorySection from '../fragment/CategorySection';
-
-interface ProductProps {
-  id: string;
-  image: string;
-  title: string;
-  price: number | string;
-  category: string; // tambahkan properti kategori
-}
 
 const Product = () => {
   const [products, setProducts] = useState<ProductProps[]>([]);
@@ -17,9 +9,9 @@ const Product = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
   useEffect(() => {
-    getProducts((data) => {
+    getProducts((data: ProductProps[]) => {
       setProducts(data);
-      setFilteredProducts(data); // set filtered products to all products initially
+      setFilteredProducts(data);
     });
   }, []);
 

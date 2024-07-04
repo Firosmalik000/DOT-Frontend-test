@@ -1,15 +1,17 @@
 import axios, { AxiosResponse } from 'axios';
-
-interface Product {
+export interface ProductProps {
   id: number;
-  name: string;
+  image: string;
+  title: string;
   price: number;
+  category: string;
+  qty?: number;
 }
 
-export const getProducts = (callback: (products: Product[]) => void) => {
+export const getProducts = (callback: (products: ProductProps[]) => void) => {
   axios
     .get('https://fakestoreapi.com/products')
-    .then((res: AxiosResponse<Product[]>) => {
+    .then((res: AxiosResponse<ProductProps[]>) => {
       callback(res.data);
     })
     .catch((err) => {

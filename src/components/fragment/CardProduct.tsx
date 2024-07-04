@@ -28,7 +28,7 @@ const Body = (props: any) => {
   );
 };
 const Footer = (props: any) => {
-  const { price, item, id } = props;
+  const { price, item } = props;
   const dispatch = useDispatch();
   const handleAddToCart = (items: any) => {
     dispatch(addToCart(items));

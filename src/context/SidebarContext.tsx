@@ -1,10 +1,24 @@
-import { useState, createContext } from 'react';
-interface childProps {
-  children: React.ReactNode;
+import { useState, createContext, ReactNode } from 'react';
+
+interface SidebarContextProps {
+  isOpen: boolean;
+  setIsOpen: (value: boolean) => void;
+  handleClose: () => void;
 }
-export const SidebarContext = createContext();
-const SidebarProvider = ({ children }: childProps) => {
+
+interface ChildProps {
+  children: ReactNode;
+}
+
+export const SidebarContext = createContext<SidebarContextProps>({
+  isOpen: false,
+  setIsOpen: () => {},
+  handleClose: () => {},
+});
+
+const SidebarProvider = ({ children }: ChildProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
   const handleClose = () => {
     setIsOpen(false);
   };
