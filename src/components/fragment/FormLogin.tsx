@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { login } from '../../services/auth.service';
 import Button from '../element/Button';
-import InputForm from '../element/input/inputForm';
+import InputForm from '../element/input/InputForm';
 
 const FormLogin = () => {
   const [loginFailed, setLoginFailed] = useState<string>('');
