@@ -2,6 +2,7 @@ import { FaTrash } from 'react-icons/fa';
 import Button from '../element/Button';
 import { decreaseCart, increaseCart, removeCart } from '../../slice/CartSlice';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 interface CardCartProps {
   item: {
@@ -35,7 +36,9 @@ const CardCart: React.FC<CardCartProps> = ({ item }) => {
         <button className="absolute top-1 right-1 py-1 px-2 rounded-lg cursor-pointer bg-red-600 hover:bg-red-300 transition duration-300" onClick={handleRemove}>
           <FaTrash />
         </button>
-        <img src={item.image} alt={item.title} className="md-w-[150px] w-[110px]  h-full object-cover" />
+        <Link to={`/product/${item.id}`}>
+          <img src={item.image} alt={item.title} className="md-w-[150px] w-[110px]  h-full object-contain" />
+        </Link>
       </div>
       <div className="flex flex-col justify-between ml-4">
         <div className="mb-1"> {item.title.substring(0, 30)} ...</div>

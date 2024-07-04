@@ -39,7 +39,7 @@ const Product = () => {
     <section className="relative">
       <CategorySection onCategoryChange={handleCategoryChange} />
       <div className="container mx-auto flex justify-center px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 my-4">
           {filteredProducts.length > 0 &&
             filteredProducts.map((product) => (
               <div key={product.id} className="col-span-1">

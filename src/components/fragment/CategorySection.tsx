@@ -12,7 +12,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryChange }) =
   const buttonCategory = 'hover:scale-105 bg-blue-600 transition duration-300';
 
   return (
-    <section className="relative py-7 mx-[200px] flex-col my-8 border-y h-[150px]">
+    <section className="relative py-7 flex-col my-8 border-y min-h-[150px] ">
       <div className="text-center mb-3">
         <p className="text-xl">CATEGORIES</p>
       </div>
@@ -22,10 +22,10 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryChange }) =
             All
           </Button>
           <Button classname={buttonCategory} onClick={() => handleCategoryClick(`men's clothing`)}>
-            Mens
+            Men's
           </Button>
           <Button classname={buttonCategory} onClick={() => handleCategoryClick("women's clothing")}>
-            Womens
+            Women's
           </Button>
           <Button classname={buttonCategory} onClick={() => handleCategoryClick('jewelery')}>
             Accessoris
