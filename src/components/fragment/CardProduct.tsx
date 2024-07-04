@@ -30,14 +30,12 @@ const Body = (props: any) => {
 const Footer = (props: any) => {
   const { price, item, id } = props;
   const dispatch = useDispatch();
-
-  if (!item) {
-    return <div>No data available</div>;
-  }
-
   const handleAddToCart = (items: any) => {
     dispatch(addToCart(items));
   };
+  if (!item) {
+    return <div>No data available</div>;
+  }
 
   return (
     <div className="flex items-center justify-between px-5 pb-5">

@@ -30,12 +30,12 @@ const CardCart: React.FC<CardCartProps> = ({ item }) => {
   };
 
   return (
-    <div className="w-full rounded-xl border h-[180px] flex p-4">
+    <div className="w-full rounded-xl border h-[180px] flex md-p-4 p-2">
       <div className="w-1/2 relative">
         <button className="absolute top-1 right-1 py-1 px-2 rounded-lg cursor-pointer bg-red-600 hover:bg-red-300 transition duration-300" onClick={handleRemove}>
           <FaTrash />
         </button>
-        <img src={item.image} alt={item.title} className="min-w-[150px] h-full object-cover" />
+        <img src={item.image} alt={item.title} className="md-w-[150px] w-[110px]  h-full object-cover" />
       </div>
       <div className="flex flex-col justify-between ml-4">
         <div className="mb-1"> {item.title.substring(0, 30)} ...</div>

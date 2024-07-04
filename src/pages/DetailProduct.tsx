@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getDetailProduct } from '../services/product.service';
 import { useLogin } from '../hooks/useLogin';
+import { addToCart } from '../slice/CartSlice';
+import { useDispatch } from 'react-redux';
 
 interface Product {
   id?: number;
@@ -19,6 +21,10 @@ interface Product {
 export const DetailProductPage = () => {
   const [product, setProduct] = useState<Product>({});
   const { id } = useParams<{ id: string }>();
+  const dispatch = useDispatch();
+  const handleAddToCart = (items: any) => {
+    dispatch(addToCart(items));
+  };
   useLogin();
   useEffect(() => {
     if (id) {
@@ -51,7 +57,7 @@ export const DetailProductPage = () => {
                 <button className="h-10 px-6 font-semibold rounded-md bg-black text-white hover:bg-blue-600 transition duration-300" type="submit">
                   Buy now
                 </button>
-                <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900 hover:bg-blue-600 transition duration-300 hover:text-white" type="button">
+                <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900 hover:bg-blue-600 transition duration-300 hover:text-white" type="button" onClick={() => handleAddToCart(product)}>
                   Add to Cart
                 </button>
               </div>

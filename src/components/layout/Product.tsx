@@ -10,7 +10,7 @@ interface ProductProps {
 }
 
 const Product = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<ProductProps[]>([]);
 
   useEffect(() => {
     getProducts((data) => {
@@ -20,11 +20,11 @@ const Product = () => {
 
   console.log({ products });
   return (
-    <div className="container mx-auto flex justify-center">
-      <div className="grid grid-cols-3 w-5/8  ">
+    <div className="container mx-auto flex justify-center px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
         {products.length > 0 &&
-          products.map((product: ProductProps) => (
-            <div key={product.id} className="col-span-2 md:col-span-1">
+          products.map((product) => (
+            <div key={product.id} className="col-span-1">
               <CardProduct>
                 <CardProduct.Header image={product.image} id={product.id} />
                 <CardProduct.Body name={product.title}></CardProduct.Body>

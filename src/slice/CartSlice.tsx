@@ -1,4 +1,3 @@
-// CartSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface CartItem {
@@ -12,35 +11,43 @@ export interface CartState {
   items: CartItem[];
 }
 
-const initialState: CartState = { items: [] };
+const username = localStorage.getItem('user');
+const initialState: CartState = {
+  items: JSON.parse(localStorage.getItem(`cart_${username}`) || '[]'),
+};
 
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<CartItem>) => {
+      const username = localStorage.getItem('user');
       const item = action.payload;
       const selectItem = state.items.find((cartItem) => cartItem.id === item.id);
       if (selectItem) {
         selectItem.qty += 1;
-        console.log(selectItem);
       } else {
         state.items.push({ ...item, qty: 1 });
       }
-      console.log(item);
+      localStorage.setItem(`cart_${username}`, JSON.stringify(state.items));
     },
     removeCart: (state, action: PayloadAction<number>) => {
+      const username = localStorage.getItem('user');
       const itemId = action.payload;
       state.items = state.items.filter((item) => item.id !== itemId);
+      localStorage.setItem(`cart_${username}`, JSON.stringify(state.items));
     },
     increaseCart: (state, action: PayloadAction<number>) => {
+      const username = localStorage.getItem('user');
       const itemId = action.payload;
       const selectItem = state.items.find((item) => item.id === itemId);
       if (selectItem) {
         selectItem.qty += 1;
       }
+      localStorage.setItem(`cart_${username}`, JSON.stringify(state.items));
     },
     decreaseCart: (state, action: PayloadAction<number>) => {
+      const username = localStorage.getItem('user');
       const itemId = action.payload;
       const selectItem = state.items.find((item) => item.id === itemId);
       if (selectItem) {
@@ -49,9 +56,12 @@ const cartSlice = createSlice({
           state.items = state.items.filter((item) => item.id !== itemId);
         }
       }
+      localStorage.setItem(`cart_${username}`, JSON.stringify(state.items));
     },
     clearCart: (state) => {
+      const username = localStorage.getItem('user');
       state.items = [];
+      localStorage.setItem(`cart_${username}`, JSON.stringify(state.items));
     },
   },
 });

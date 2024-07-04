@@ -11,7 +11,6 @@ const Hero = () => {
           </div>
           <h1 className="text-[70px] loading-[1.1] font-light mb-4">
             AUTUMN SALE STYLISH <br />
-            <span className="font-semibold"> WOMENS</span>
           </h1>
           {/* <Link to={'/'} className="self-start uppercase font-semibold border-b-2 border-primary"> */}
           Discover More

@@ -5,6 +5,7 @@ import { useLogin } from '../hooks/useLogin';
 
 const Home = () => {
   useLogin();
+
   return (
     <div>
       <Hero />
